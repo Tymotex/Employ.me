@@ -2,12 +2,24 @@
 
 Employ.me is a web application that scrapes together job postings from major job-hunting platforms and provides automation services for the user to track their application for postings they are interested in. This project was the winning entry for SENG2021 at UNSW and our team (AT3K) received the Macquarie Group Software Engineering prize.
 
-### Links:
-
 -   <a href="https://employ-me.netlify.app/">Deployed prototype here</a>
 
-<hr />
+### Features Summary:
+A list of features Employ.me offers:
+- Scrapes job postings from several sources and allows you to automate your job application tracking with a single click
+- Manage and see your job applications in intuitive views:
+    - Spreadsheet — including filters, selectable columns, searching, and more
+    - Kanban board — clearly captures the state of each job application
+    - Calendar — highlights critical events such as upcoming interviews
+- Personalise your job boards, write notes for each job application using an integrated rich text editor
+- Statistics and automatic activity recording — allows you to access insights about your long term progress and career development through a statistics dashboard
+- Social networking
+    - Connect with other users, see the resumes they have chosen to upload
+    - Receive valuable constructive criticism for your public resume and job profile from your peers. Leave feedback for your peers and the community will vote you up
+    - Automatically constructs a profile for you, based on a resume you upload (an opt-in experience)
 
+<hr />
+# Setup
 ## Frontend Directory Structure:
 
 ```
