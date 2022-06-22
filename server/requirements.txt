@@ -45,7 +45,7 @@ MarkupSafe==1.1.1
 msgpack==0.6.2
 murmurhash==1.0.5
 nltk==3.6.2
-numpy==1.20.2
+numpy==1.22.0
 oauthlib==3.1.0
 packaging==20.3
 pandas==1.2.4
