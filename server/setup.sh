@@ -5,7 +5,7 @@
 pip3 install -r requirements.txt
 
 # spaCy
-python -m spacy download en_core_web_sm
+python -m spacy download en
 
 # nltk
 python -m nltk.downloader words
