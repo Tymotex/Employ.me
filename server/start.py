@@ -5,4 +5,4 @@ from JobTracker import app
 from JobTracker import db
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5555)  
+    app.run('0.0.0.0', port=5555)  

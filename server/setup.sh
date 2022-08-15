@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# TODO: run source?
-
 pip3 install -r requirements.txt
 
 # spaCy

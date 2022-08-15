@@ -1,0 +1,28 @@
+version: "3.7"
+services:
+    db:
+        image: mongo:5.0
+        volumes:
+            - db_data:/data/db
+        environment: # URI: mongodb://tim:1984@localhost:27017/?authMechanism=DEFAULT
+            - MONGO_INITDB_DATABASE=employ-me
+            - MONGO_INITDB_ROOT_USERNAME=tim
+            - MONGO_INITDB_ROOT_PASSWORD=1984
+        ports:
+            - "27017-27019:27017-27019"
+    api:
+        build:
+            context: server
+            dockerfile: Dockerfile
+        depends_on:
+            - db
+        environment:
+            DB_URI: mongodb://tim:1984@db:27017/?authMechanism=DEFAULT
+            DEV_REQUEST_REDIRECT_URI: http://127.0.0.1:5555/api/auth/googlelogin/callback
+            PROD_REQUEST_REDIRECT_URI: https://api.employ.me.timz.dev/api/auth/googlelogin/callback
+            DEV_CLIENT_HOME_URL: http://localhost:3000
+            PROD_CLIENT_HOME_URL: https://employ.me.timz.dev
+        ports:
+            - 5555:5555
+volumes:
+    db_data:
