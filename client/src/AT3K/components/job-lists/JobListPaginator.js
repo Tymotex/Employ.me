@@ -13,14 +13,13 @@ const JobListPaginator = ({ currPage, pageCount, handlePageClick }) => {
             {/* Absolutely position navigation bar at the bottom */}
             <BottomNav>
                 <ReactPaginate
-                    className="bottomNavPaginator"
+                    className="pagination"
                     initialSelected={currPage}
                     previousLabel={<ChevronLeft />}
                     nextLabel={<ChevronRight />}
                     breakLabel={'...'}
                     breakClassName={'break-me'}
                     pageCount={pageCount}
-                    g
                     marginPagesDisplayed={2}
                     pageRangeDisplayed={5}
                     onPageChange={handlePageClick}

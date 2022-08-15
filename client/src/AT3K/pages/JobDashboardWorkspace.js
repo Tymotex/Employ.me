@@ -7,7 +7,7 @@ import { BreadCrumbs } from "../components/breadcrumbs";
 import {
     BoardToolbar,
     JobCalendar,
-    JobKanban,
+    // JobKanban,
     JobList,
     JobSpreadsheet,
 } from "../components/job-boards";
