@@ -108,13 +108,13 @@ const JobDashboardWorkspace = ({
                             fieldsToShow={fieldsToShow}
                         />
                     )}
-                    {boardType === "board" && (
+                    {/* {boardType === "board" && (
                         <JobKanban
                             trackedJobs={trackedJobs}
                             boardID={board._id}
                             fieldsToShow={fieldsToShow}
                         />
-                    )}
+                    )} */}
                     {boardType === "calendar" && (
                         <JobCalendar
                             trackedJobs={trackedJobs}

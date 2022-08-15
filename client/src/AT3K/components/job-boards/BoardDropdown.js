@@ -18,10 +18,10 @@ const BoardDropdown = ({ boardType, handleChangeBoard }) => {
                 onChange={handleChangeBoard}
                 label="Board Type"
             >
-            <MenuItem value={"spreadsheet"}>Spreadsheet</MenuItem>
-            <MenuItem value={"board"}>Kanban Board</MenuItem>
-            <MenuItem value={"calendar"}>Calendar</MenuItem>
-            <MenuItem value={"list"}>List</MenuItem>
+                <MenuItem value={"spreadsheet"}>Spreadsheet</MenuItem>
+                {/* <MenuItem value={"board"}>Kanban Board</MenuItem> */}
+                <MenuItem value={"calendar"}>Calendar</MenuItem>
+                <MenuItem value={"list"}>List</MenuItem>
             </Select>
         </FormControl>
     )

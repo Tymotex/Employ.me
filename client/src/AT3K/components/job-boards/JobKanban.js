@@ -14,7 +14,7 @@ const getJobCardsOfStatus = ((trackedJobs, status) => (
         title: eachJob.title,
         label: eachJob.company,
         description: eachJob.description,
-        job: eachJob 
+        job: eachJob
     }))
 ));
 
@@ -87,9 +87,9 @@ const JobBoard = ({ trackedJobs, boardID }) => {
     return (
         <FullscreenMode>
             <div className={boardStyles.container}>
-                <Board 
-                    className={boardStyles.board} 
-                    data={jobs} 
+                <Board
+                    className={boardStyles.board}
+                    data={jobs}
                     editable={true}
                     onCardMoveAcrossLanes={updateJob}
                     onDataChange={getNewState}
