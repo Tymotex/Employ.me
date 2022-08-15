@@ -2,18 +2,16 @@
 import { Avatar, Menu, MenuItem } from '@material-ui/core';
 import {
     BarChart as BarChartIcon,
-    ExitToApp as SignOutIcon,
-    HelpOutline as FAQIcon,
-    Home as HomeIcon,
+    ExitToApp as SignOutIcon, Home as HomeIcon,
     Search as SearchIcon,
     Settings as SettingsIcon,
-    Work as WorkIcon,
+    Work as WorkIcon
 } from '@material-ui/icons';
 import FaceIcon from '@material-ui/icons/Face';
 import PeopleIcon from '@material-ui/icons/People';
 import axios from 'axios';
 import Cookie from 'js-cookie';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { LoadingSpinner } from '../components/loaders';
 // Top nav components:
@@ -83,14 +81,14 @@ if (userID) {
         },
         { id: 70, type: 'divider' },
         // { id: 70, type: 'title', label: 'Resources' },
-        { id: 80, label: 'FAQ', link: '/faq', icon: <FAQIcon /> },
+        // { id: 80, label: 'FAQ', link: '/faq', icon: <FAQIcon /> },
     ];
 } else {
     // Only rendered if not logged in
     sideNavItems = [
         { id: 0, label: 'Home', link: '/', icon: <HomeIcon /> },
-        { id: 60, type: 'divider' },
-        { id: 80, label: 'FAQ', link: '/faq', icon: <FAQIcon /> },
+        // { id: 60, type: 'divider' },
+        // { id: 80, label: 'FAQ', link: '/faq', icon: <FAQIcon /> },
     ];
 }
 
