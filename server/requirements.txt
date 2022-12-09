@@ -5,7 +5,7 @@ blis==0.7.8
 bs4==0.0.1
 careerjet-api==3.2
 catalogue==2.0.8
-certifi==2022.6.15
+certifi==2022.12.7
 cffi==1.15.1
 chardet==5.0.0
 charset-normalizer==2.1.0
