@@ -1,10 +1,16 @@
 # Employ.me
 
-Employ.me is a web application that scrapes together job postings from major job-hunting platforms and provides automation services for the user to track their application for postings they are interested in. This project was the winning entry for SENG2021 at UNSW and our team (AT3K) received the Macquarie Group Software Engineering prize.
+Employ.me is a web application that scrapes together job postings from major job-hunting platforms and provides automation services for the user to track their application for job postings they are interested in. This project was the winning entry for SENG2021 at UNSW and our team (AT3K) received the Macquarie Group Software Engineering prize for 1st place in SENG2021.
 
--   <a href="https://employ-me.netlify.app/">Deployed prototype here</a>
+<a href="https://employ.me.timz.dev/">Deployed prototype here</a> 🚀
 
-### Features Summary:
+Built with:
+- React with Material UI
+- Flask
+- MongoDB
+
+## Features
+
 A list of features Employ.me offers:
 - Scrapes job postings from several sources and allows you to automate your job application tracking with a single click
 - Manage and see your job applications in intuitive views:
@@ -19,8 +25,57 @@ A list of features Employ.me offers:
     - Automatically constructs a profile for you, based on a resume you upload (an opt-in experience)
 
 <hr />
-# Setup
-## Frontend Directory Structure:
+
+
+## Setup Instructions
+
+Running the frontend development server
+```shell
+git clone https://github.com/Tymotex/Employ.me.git
+cd client
+npm install
+
+# View the locally hosted frontend on http://localhost:3000/
+npm start
+```
+
+Backend setup
+```shell
+cd server
+pip3 install -r requirements.txt
+
+# Install Resume parser dependencies
+# 1. spaCy
+python -m spacy download en_core_web_sm
+# 2. nltk
+python -m nltk.downloader words
+python -m nltk.downloader stopwords
+
+# Start the backend server.
+python3 start.py
+```
+
+Set the environment variables in `server/JobTracker/.env`:
+
+```python
+SECRET_KEY="senpai"
+GOOGLE_CLIENT_ID="client id here. Get one at http://console.cloud.google.com/"
+GOOGLE_CLIENT_SECRET="client secret here. Get one at http://console.cloud.google.com/"
+DB_URI="mongodb+srv://<username>:<password>@<clusterName>.vznsj.mongodb.net/jobtracker?retryWrites=true&w=majority"   # Set up a MongoDB cloud instance here: https://docs.atlas.mongodb.com/getting-started/
+ENV_TYPE="development"
+# ENV_TYPE="production"
+
+# Google Auth callback and redirect URLs:
+DEV_REQUEST_REDIRECT_URI="http://127.0.0.1:5000/api/auth/googlelogin/callback"
+PROD_REQUEST_REDIRECT_URI="https://jobtracker.club/api/auth/googlelogin/callback"
+
+DEV_CLIENT_HOME_URL="http://localhost:3000"
+PROD_CLIENT_HOME_URL="https://employ-me.netlify.app"
+```
+
+# Developer Notes
+
+## Frontend Directory Structure
 
 ```
 client/
@@ -74,7 +129,7 @@ client/
     └── pages                     # Base pages
 ```
 
-## Backend Directory Structure:
+## Backend Directory Structure
 
 ```
 server
@@ -98,57 +153,4 @@ server
 ├── requirements.txt
 ├── setup.py
 └── start.py                        # Basic script for starting the server
-```
-
-## Setup Instructions
-
-```shell
-git clone <THIS REPO>
-```
-
-Running the frontend development server
-
-```shell
-cd seng2021_at3k/SourceCode_and_Documentation/client
-
-npm install   # Only for first time setup
-
-npm start     # View the locally hosted frontend on http://localhost:3000/
-```
-
-Backend setup:
-
-```shell
-cd seng2021_at3k/SourceCode_and_Documentation/server
-
-pip3 install -r requirements.txt    # Only for first time setup
-
-# Resume parser dependencies
-# spaCy
-python -m spacy download en_core_web_sm
-
-# nltk
-python -m nltk.downloader words
-python -m nltk.downloader stopwords
-
-python3 start.py
-```
-
-Set environment variables in `server/JobTracker/.env`:
-
-```python
-SECRET_KEY="senpai"
-GOOGLE_CLIENT_ID="client id here. Get one at http://console.cloud.google.com/"
-GOOGLE_CLIENT_SECRET="client secret here. Get one at http://console.cloud.google.com/"
-DB_URI="mongodb+srv://<username>:<password>@<clusterName>.vznsj.mongodb.net/jobtracker?retryWrites=true&w=majority"   # Set up a MongoDB cloud instance here: https://docs.atlas.mongodb.com/getting-started/
-ENV_TYPE="development"
-# ENV_TYPE="production"
-
-# Google Auth callback and redirect URLs:
-DEV_REQUEST_REDIRECT_URI="http://127.0.0.1:5000/api/auth/googlelogin/callback"
-PROD_REQUEST_REDIRECT_URI="https://jobtracker.club/api/auth/googlelogin/callback"
-
-DEV_CLIENT_HOME_URL="http://localhost:3000"
-PROD_CLIENT_HOME_URL="https://employ-me.netlify.app"
-
 ```
